@@ -1,52 +1,52 @@
-name: Automate Weather Data Collection
+name: Fetch Athenry Weather Data
 
-# Define events to trigger the workflow
 on:
-  # Schedule the workflow to run daily at 10 AM UTC
   schedule:
-    - cron: "0 10 * * *"
+    - cron: "0 10 * * *"  # Run daily at 10am UTC
+  workflow_dispatch:              # Allow manual triggering
 
-  # Allow manual triggering of the workflow
-  workflow_dispatch:
-
-# Define the jobs
 jobs:
   run-weather-script:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest        # Use a Linux VM (Ubuntu)
 
-    # Environment variables for the script
-    env:
-      SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-      SMTP_PORT: ${{ secrets.SMTP_PORT }}
-      SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
-      SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
-      RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+    permissions:
+      contents: write             # Allow commit and push to the repository
 
     steps:
-      # Checkout the repository
+      # Step 1: Clone the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Set execute permissions for weather.sh
+      # Step 2: Install python and dependencies so that send_error_email.py can run
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x" 
+
+      - name: Install Python Dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 3: Make weather.sh executable
       - name: Make weather.sh executable
         run: chmod +x weather.sh
 
-      # Run the weather.sh script
+      # Step 4: Run the weather.sh script
       - name: Run Weather Script
         run: ./weather.sh
 
-      # Configure Git for pushing new data
+      # Step 5: Configure Git for pushing changes
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Stage, commit, and push changes
+      # Step 6: Commit and push new data
       - name: Commit and Push Changes
         run: |
           git add data/weather/
-          git commit -m "Automated weather data update"
+          git commit -m "Athenry weather data automated update"
           git push
         env:
-          # Use GitHub token to authenticate
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
