@@ -300,3 +300,49 @@ HTTP request sent, awaiting response... 404 Not Found
 2024-12-14 23:07:58 ERROR 404: Not Found.
 
 Sat Dec 14 23:07:58 UTC 2024 [ERROR]: Failed to download weather data from https://prodapi.metweb.ie/observations/athenry/todayss. Check the URL or network connection.
+
+--------------------------------------------------------------
+Sun Dec 15 00:16:17 UTC 2024 [INFO]: Fetching weather data from Met Eireann API endpoint
+--2024-12-15 00:16:17--  https://prodapi.metweb.ie/observations/athenry/todayss
+Resolving prodapi.metweb.ie (prodapi.metweb.ie)... 139.162.185.91
+Connecting to prodapi.metweb.ie (prodapi.metweb.ie)|139.162.185.91|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-12-15 00:16:17 ERROR 404: Not Found.
+
+Sun Dec 15 00:16:17 UTC 2024 [ERROR]: Failed to download weather data from https://prodapi.metweb.ie/observations/athenry/todayss. Check the URL or network connection.
+
+--------------------------------------------------------------
+Sun Dec 15 00:17:19 UTC 2024 [INFO]: Fetching weather data from Met Eireann API endpoint
+--2024-12-15 00:17:19--  https://prodapi.metweb.ie/observations/athenry/
+Resolving prodapi.metweb.ie (prodapi.metweb.ie)... 139.162.185.91
+Connecting to prodapi.metweb.ie (prodapi.metweb.ie)|139.162.185.91|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-12-15 00:17:19 ERROR 404: Not Found.
+
+Sun Dec 15 00:17:19 UTC 2024 [ERROR]: Failed to download weather data from https://prodapi.metweb.ie/observations/athenry/. Check the URL or network connection.
+
+--------------------------------------------------------------
+Sun Dec 15 00:18:47 UTC 2024 [INFO]: Fetching weather data from Met Eireann API endpoint
+--2024-12-15 00:18:47--  https://prodapi.metweb.ie/observations/athenry/
+Resolving prodapi.metweb.ie (prodapi.metweb.ie)... 139.162.185.91
+Connecting to prodapi.metweb.ie (prodapi.metweb.ie)|139.162.185.91|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-12-15 00:18:47 ERROR 404: Not Found.
+
+Sun Dec 15 00:18:47 UTC 2024 [ERROR]: Failed to download weather data from https://prodapi.metweb.ie/observations/athenry/. Check the URL or network connection.
+
+--------------------------------------------------------------
+Sun Dec 15 00:19:31 UTC 2024 [INFO]: Fetching weather data from Met Eireann API endpoint
+--2024-12-15 00:19:31--  https://prodapi.metweb.ie/observations/athenry/today
+Resolving prodapi.metweb.ie (prodapi.metweb.ie)... 139.162.185.91
+Connecting to prodapi.metweb.ie (prodapi.metweb.ie)|139.162.185.91|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/json]
+Saving to: ‘data/weather/20241215_001931.json’
+
+     0K                                                        40.9M=0s
+
+2024-12-15 00:19:32 (40.9 MB/s) - ‘data/weather/20241215_001931.json’ saved [313]
+
+Sun Dec 15 00:19:32 UTC 2024 [INFO]: Successfully downloaded 20241215_001931.json
+Sun Dec 15 00:19:32 UTC 2024 [INFO]: 20241215_001931.json is valid.
