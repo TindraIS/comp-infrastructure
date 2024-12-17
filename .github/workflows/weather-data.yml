@@ -2,7 +2,7 @@ name: Fetch Athenry Weather Data
 
 on:
   schedule:
-    - cron: "0 10 * * *"  # Run daily at 10am UTC
+    - cron: "0 10 * * *"          # Run daily at 10am UTC
   workflow_dispatch:              # Allow manual triggering
 
 jobs:
@@ -13,11 +13,11 @@ jobs:
       contents: write             # Allow commit and push to the repository
 
     steps:
-      # Step 1: Clone the repository
+      # 1 Clone the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Install python and dependencies so that send_error_email.py can run
+      # 2 Install python and dependencies so that send_error_email.py can run
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -28,24 +28,25 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 3: Make weather.sh executable
+      # 3 Make weather.sh executable
       - name: Make weather.sh executable
         run: chmod +x weather.sh
 
-      # Step 4: Run the weather.sh script
+      # 4 Run the weather.sh script
       - name: Run Weather Script
         run: ./weather.sh
 
-      # Step 5: Configure Git for pushing changes
+      # 5 Configure Git for pushing changes
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Step 6: Commit and push new data
+      # 6 Commit and push
       - name: Commit and Push Changes
         run: |
           git add data/weather/
+          git add weather.log
           git commit -m "Athenry weather data automated update"
           git push
         env:
