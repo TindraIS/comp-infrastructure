@@ -52,9 +52,7 @@ Using GitHub Actions, the script runs daily at 10AM UTC, automatically committin
 The workflow logs execution details, including successes and errors, to `weather.log` for easy monitoring. Additionally, any critical errors trigger a notification via email using the `send_error_email.py` script, ensuring issues are promptly reported to the author. 
 
 - Data analysis and other notes:
-A Jupyter Notebook (`weather.ipynb`) is included to summarise, analyse, and explore the collected weather data, providing insights into key metrics like temperature, wind speed, and rainfall. It also documents implementation steps for for tasks 1-7.
-
-A Jupyter Notebook (weather.ipynb) is included to summarise, analyse, and explore the collected weather data. It also documents the implementation steps for tasks 1-9.
+A Jupyter Notebook (`weather.ipynb`) is included to summarise, analyse, and explore the collected weather data, providing insights into key metrics like temperature, wind speed, and rainfall. It also documents implementation steps for tasks 1-9.
 
 
 ## Get Started
