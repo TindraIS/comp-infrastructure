@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest        # Use a Linux VM (Ubuntu)
 
     permissions:
-      contents: write             # Allow commit and push to the repository
+      contents: write  
+    
+    env:
+      SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+      SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+      RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
 
     steps:
       # 1 Clone the repository
