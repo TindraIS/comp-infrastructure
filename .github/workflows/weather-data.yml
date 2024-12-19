@@ -24,7 +24,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # 1.1 Debug step to verify environment variables
+      # 2 Debug step to verify environment variables
       - name: Debug Environment Variables
         run: |
           echo "SMTP_SERVER=$SMTP_SERVER"
@@ -32,7 +32,7 @@ jobs:
           echo "SENDER_EMAIL=$SENDER_EMAIL"
           echo "RECIPIENT_EMAIL=$RECIPIENT_EMAIL"
 
-      # 2 Install python and dependencies so that send_error_email.py can run
+      # 3 Install python and dependencies so that send_error_email.py can run
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -43,21 +43,21 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 3 Make weather.sh executable
+      # 4 Make weather.sh executable
       - name: Make weather.sh executable
         run: chmod +x weather.sh
 
-      # 4 Run the weather.sh script
+      # 5 Run the weather.sh script
       - name: Run Weather Script
         run: ./weather.sh
 
-      # 5 Configure Git for pushing changes
+      # 6 Configure Git for pushing changes
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 6 Commit and push
+      # 7 Commit and push
       - name: Commit and Push Changes
         run: |
           git add data/weather/
