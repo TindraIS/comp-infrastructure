@@ -42,16 +42,16 @@ The repository is organised into multiple tasks and a final project, with each t
 
 Key features include:
 
-- Automated data retrieval:
+- **Automated data retrieval**:
 A Bash script (`weather.sh`) fetches present day weather data from the Met Éireann API and saves it with timestamped filenames.
 
-- Scheduled automation & data storage:
+- **Scheduled automation & data storage**:
 Using GitHub Actions, the script runs daily at 10AM UTC, automatically committing and pushing new weather data back to the repository, which is stored in JSON format under data/weather/.
 
-- Workflow monitoring:
+- **Workflow monitoring**:
 The workflow logs execution details, including successes and errors, to `weather.log` for easy monitoring. Additionally, any critical errors trigger a notification via email using the `send_error_email.py` script, ensuring issues are promptly reported to the author. 
 
-- Data analysis and other notes:
+- **Data analysis and other notes**:
 A Jupyter Notebook (`weather.ipynb`) is included to summarise, analyse, and explore the collected weather data, providing insights into key metrics like temperature, wind speed, and rainfall. It also documents implementation steps for tasks 1-9.
 
 
@@ -96,13 +96,22 @@ pip install -r requirements.txt
 **4. GitHub Actions configuration**
 
 GitHub Actions workflows are preconfigured in `.github/workflows/weather-data.yml`.
-For email failure notifications, [generate an app password with your Gmail account](https://support.google.com/mail/answer/185833?hl=en) and create environment variables to store SMTP credentials under _Settings > Secrets and Variables > Actions_ using the following format:
+For email failure notifications, [generate an app password with your Gmail account](https://support.google.com/mail/answer/185833?hl=en) and create environment variables to store SMTP credentials in your repository under _Settings > Secrets and Variables > Actions_ using the following format:
       
     SMTP_SERVER=smtp.gmail.com
     SMTP_PORT=587
     SENDER_EMAIL=your-email@gmail.com
     SENDER_PASSWORD="your app password"
     RECIPIENT_EMAIL=recipient-email@gmail.com
+
+Alternatively, for local development, set the required environment variables manually in your terminal:
+```bash
+export SMTP_SERVER=smtp.gmail.com
+export SMTP_PORT=587
+export SENDER_EMAIL=email@gmail.com
+export SENDER_PASSWORD="your app password"
+export RECIPIENT_EMAIL=recipient-email@gmail.com
+```
 
 ## Get Help
 
