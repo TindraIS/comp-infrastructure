@@ -13,14 +13,14 @@ import smtplib
 from email.mime.text import MIMEText
 import sys
 
-# Fetch SMTP configuration from environment variables
-smtp_server = os.getenv("SMTP_SERVER")
-smtp_port = os.getenv("SMTP_PORT")
-sender_email = os.getenv("SENDER_EMAIL")
-sender_password = os.getenv("SENDER_PASSWORD")
-recipient_email = os.getenv("RECIPIENT_EMAIL")
-
 def send_error_email(error_message):
+    # Fetch SMTP configuration from environment variables
+    smtp_server = os.getenv("SMTP_SERVER")
+    smtp_port = os.getenv("SMTP_PORT")
+    sender_email = os.getenv("SENDER_EMAIL")
+    sender_password = os.getenv("SENDER_PASSWORD")
+    recipient_email = os.getenv("RECIPIENT_EMAIL")
+
     # Verify it the environment variables are present
     missing_vars = [var for var in ["SMTP_SERVER", "SMTP_PORT", "SENDER_EMAIL", "SENDER_PASSWORD", "RECIPIENT_EMAIL"] 
                     if os.getenv(var) is None]
