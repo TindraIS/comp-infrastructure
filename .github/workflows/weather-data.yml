@@ -24,6 +24,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      # 1.1 Debug step to verify environment variables
+      - name: Debug Environment Variables
+        run: |
+          echo "SMTP_SERVER=$SMTP_SERVER"
+          echo "SMTP_PORT=$SMTP_PORT"
+          echo "SENDER_EMAIL=$SENDER_EMAIL"
+          echo "RECIPIENT_EMAIL=$RECIPIENT_EMAIL"
+
       # 2 Install python and dependencies so that send_error_email.py can run
       - name: Set up Python
         uses: actions/setup-python@v4
