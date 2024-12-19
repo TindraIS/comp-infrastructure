@@ -6,7 +6,7 @@ output_dir="data/weather"
 log_file="weather.log" 
 filename="$(date +%Y%m%d_%H%M%S).json"
 output_file="$output_dir/$filename"
-weather_url="https://prodapi.metweb.ie/observations/athenry/todayxx"
+weather_url="https://prodapi.metweb.ie/observations/athenry/today"
 
 # Function to send error notifications
 send_error_email() {
