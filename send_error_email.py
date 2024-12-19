@@ -43,7 +43,7 @@ def send_error_email(error_message):
 
     try:
         # Connect to the SMTP server and send the email
-        with smtplib.SMTP(smtp_server, int(smtp_port)) as server:
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
             server.starttls()
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, recipient_email, msg.as_string())
