@@ -33,7 +33,7 @@ def send_error_email(error_message):
     subject = "Weather Bash Script Error"
     body = (
         "GitHub Repository:\n"
-        "https://github.com/tindraie/comp-infrastructure\n\n"
+        "https://github.com/tindrais/comp-infrastructure\n\n"
         f"The following error occurred in the weather.sh script:\n{error_message}"
     )
     msg = MIMEText(body)
