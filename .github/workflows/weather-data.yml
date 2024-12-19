@@ -2,7 +2,7 @@ name: Fetch Athenry Weather Data
 
 on:
   schedule:
-    - cron: "25 8 * * *"          # Run daily at 10am UTC
+    - cron: "0 10 * * *"          # Run daily at 10am UTC
   workflow_dispatch:              # Allow manual triggering
 
 jobs:
