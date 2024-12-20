@@ -65,8 +65,7 @@ A Jupyter Notebook (`weather.ipynb`) is included to summarise, analyse, and expl
   - Matplotlib
   - Seaborn
   - NumPy
-  - Warnings
-  - python-dotenv
+  - Windrose
 - Gmail
 
 ### Setup guide
@@ -98,11 +97,14 @@ pip install -r requirements.txt
 GitHub Actions workflows are preconfigured in `.github/workflows/weather-data.yml`.
 For email failure notifications, [generate an app password with your Gmail account](https://support.google.com/mail/answer/185833?hl=en) and create environment variables to store SMTP credentials in your repository under _Settings > Secrets and Variables > Actions_ using the following format:
       
-    Name: SMTP_SERVER Secret:smtp.gmail.com
-    Name:SMTP_PORT Secret:587
-    Name:SENDER_EMAIL Secret:your-email@gmail.com
-    Name:SENDER_PASSWORD Secret:your app password
-    Name:RECIPIENT_EMAIL Secret:recipient-email@gmail.com
+| Name               | Secret                   |
+|--------------------|--------------------------|
+| SMTP_SERVER        | smtp.gmail.com           |
+| SMTP_PORT          | 587                      |
+| SENDER_EMAIL       | your-email@gmail.com     |
+| SENDER_PASSWORD    | your app password        |
+| RECIPIENT_EMAIL    | recipient-email@gmail.com |
+
 
 Alternatively, for local development, set the required environment variables manually in your terminal:
 ```bash
