@@ -3306,3 +3306,19 @@ Saving to: ‘data/weather/20250621_100849.json’
 
 Sat Jun 21 10:08:51 UTC 2025 [INFO]: Successfully downloaded 20250621_100849.json
 Sat Jun 21 10:08:51 UTC 2025 [INFO]: 20250621_100849.json is valid.
+
+--------------------------------------------------------------
+Sun Jun 22 10:08:45 UTC 2025 [INFO]: Fetching weather data from Met Eireann API endpoint
+--2025-06-22 10:08:45--  https://prodapi.metweb.ie/observations/athenry/today
+Resolving prodapi.metweb.ie (prodapi.metweb.ie)... 139.162.185.91
+Connecting to prodapi.metweb.ie (prodapi.metweb.ie)|139.162.185.91|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/json]
+Saving to: ‘data/weather/20250622_100845.json’
+
+     0K ...                                                     861M=0s
+
+2025-06-22 10:08:47 (861 MB/s) - ‘data/weather/20250622_100845.json’ saved [3409]
+
+Sun Jun 22 10:08:47 UTC 2025 [INFO]: Successfully downloaded 20250622_100845.json
+Sun Jun 22 10:08:47 UTC 2025 [INFO]: 20250622_100845.json is valid.
