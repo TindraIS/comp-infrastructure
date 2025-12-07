@@ -5882,3 +5882,29 @@ Saving to: ‘data/weather/20251206_100849.json’
 
 Sat Dec  6 10:09:34 UTC 2025 [INFO]: Successfully downloaded 20251206_100849.json
 Sat Dec  6 10:09:34 UTC 2025 [INFO]: 20251206_100849.json is valid.
+
+--------------------------------------------------------------
+Sun Dec  7 10:08:21 UTC 2025 [INFO]: Fetching weather data from Met Eireann API endpoint
+--2025-12-07 10:08:21--  https://prodapi.metweb.ie/observations/athenry/today
+Resolving prodapi.metweb.ie (prodapi.metweb.ie)... 139.162.185.91
+Connecting to prodapi.metweb.ie (prodapi.metweb.ie)|139.162.185.91|:443... connected.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2025-12-07 10:09:23--  (try: 2)  https://prodapi.metweb.ie/observations/athenry/today
+Reusing existing connection to prodapi.metweb.ie:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2025-12-07 10:10:25--  (try: 3)  https://prodapi.metweb.ie/observations/athenry/today
+Reusing existing connection to prodapi.metweb.ie:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/json]
+Saving to: ‘data/weather/20251207_100821.json’
+
+     0K ..                                                      685M=0s
+
+2025-12-07 10:10:48 (685 MB/s) - ‘data/weather/20251207_100821.json’ saved [3031]
+
+Sun Dec  7 10:10:48 UTC 2025 [INFO]: Successfully downloaded 20251207_100821.json
+Sun Dec  7 10:10:48 UTC 2025 [INFO]: 20251207_100821.json is valid.
